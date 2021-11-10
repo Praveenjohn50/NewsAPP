@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/favouriteNewsFragment">
+
+    <fragment
+        android:id="@+id/breakingNewsFragment"
+        android:name="com.example.newsreader.ui.fragments.BreakingNewsFragment"
+        android:label="BreakingNewsFragment">
+
+        <action
+            android:id="@+id/action_breakingNewsFragment_to_articleFragment"
+            app:destination="@id/articleActivity" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/favouriteNewsFragment"
+        android:name="com.example.newsreader.ui.fragments.FavouriteNewsFragment"
+        android:label="favouriteNewsFragment">
+
+        <action
+            android:id="@+id/action_favouriteTo_article_fragment"
+            app:destination="@id/articleActivity" />
+
+        <action
+            android:id="@+id/action_navigate_from_favourites_to_breakingNews"
+            app:destination="@+id/breakingNewsFragment"/>
+
+    </fragment>
+
+
+    <activity
+        android:id="@+id/articleActivity"
+        android:name="com.example.newsreader.ui.ArticleFragmentHolderActivity"
+        android:label="ArticleActivity">
+
+        <argument
+            android:name="article"
+            app:argType="com.example.newsreader.models.Article" />
+
+    </activity>
+
+
+</navigation>

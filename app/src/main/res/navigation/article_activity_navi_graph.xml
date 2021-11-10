@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_article_nav_graph"
+    app:startDestination="@id/ArticleActivityFragment">
+
+    <fragment
+        android:id="@+id/ArticleActivityFragment"
+        android:name="com.example.newsreader.ui.fragments.ArticleDescriptionFragment"
+        android:label="ArticleActivityFragment">
+        <argument
+            android:name="article"
+            app:argType="com.example.newsreader.models.Article" />
+    </fragment>
+</navigation>
